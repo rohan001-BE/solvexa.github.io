@@ -1,5 +1,3 @@
-
-
 /*** Spinner Start ***/
 #spinner {
     opacity: 0;
@@ -68,35 +66,47 @@
     --purple: #232323; /* Purple color */
     --gold: #FFD700; /* Gold color */
 }
-
 /*** Topbar Start ***/
 .topbar {
     font-size: 0.9rem;
     width: 100%;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: space-between;
+    align-items: center;
 }
 
 .topbar .top-info {
     letter-spacing: 1px;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.topbar .top-info small {
+    margin: 5px 10px 5px 0; /* Add some margin for better spacing on mobile */
 }
 
 .topbar .top-link {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
 .topbar .top-link a {
-    margin-right: 10px;
+    margin: 5px; /* Add some margin for better spacing on mobile */
 }
 
 #note {
-    width: 300px;
+    width: 100%; /* Full width on smaller screens */
+    max-width: 300px; /* Limit width on larger screens */
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 10px 0; /* Add some margin for better spacing on mobile */
 }
 
 #note small {
@@ -114,19 +124,13 @@
     to { left: 100%; }
 }
 
-:root {
-    --gold: #FFD700; /* Define gold color */
-}
-
 .text-gold {
     color: var(--gold);
 }
 
 /*** Topbar End ***/
 
-
-
-/* Navbar Start */
+/*** Navbar Start ***/
 .container-fluid.bg-primary {
     padding-left: 0;
     padding-right: 0;
@@ -202,10 +206,9 @@
     }
 }
 
-
+/*** Navbar End ***/
 
 /*** Carousel Start ***/
-
 .carousel-item {
     position: relative;
 }
@@ -338,10 +341,10 @@
 }
 
 /*** Carousel End ***/
+
 .bg-black {
     background-color: #232323;
 }
-
 
 /*** Custom Colors ***/
 :root {
@@ -371,7 +374,7 @@
 
 /*** Services Start ***/
 .services .services-item {
-    box-shadow: 0 0 60px rgba(0, 0, 0, 0.2)100% / 0.2);
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.2);
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -427,10 +430,7 @@
 
 /*** Services End ***/
 
-
-
 /*** Project Start ***/
-
 .project-img {
     position: relative;
     padding: 15px;
@@ -495,10 +495,7 @@
 
 /*** Project End ***/
 
-
-
 /*** Team Start ***/
-
 .team-item {
     border-top: 30px solid rgb(0, 0, 0) !important; /* Changed to gold */
     background: rgba(239, 239, 241, 0.8);
@@ -598,12 +595,9 @@
 
 /*** Team End ***/
 
-
 /*** Testimonial Start ***/
-
 .testimonial-item {
     background: #e3f0eb;
-
 }
 
 .testimonial-carousel .owl-dots {
@@ -644,9 +638,7 @@
 }
 
 /*** Testimonial End ***/
-
-
-/*** Contact Start ***/
+/* Contact Section Styles */
 .contact-detail::before {
     position: absolute;
     content: "";
@@ -662,17 +654,35 @@
 
 .contact-map {
     background: #969900;
+    height: 100%;
 }
 
 .contact-form {
     background: #969900;
+    height: 100%;
 }
 
-/*** Contact End ***/
+/* Responsive Styles */
+@media (max-width: 767.98px) {
+    .mobile-contact-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .mobile-contact-box .btn-square {
+        margin-bottom: 10px;
+    }
+    .mobile-contact-box .ms-3 {
+        margin-left: 0 !important;
+    }
+
+    .contact-map, .contact-form {
+        margin-bottom: 20px;
+    }
+}
 
 
 /*** Footer Start ***/
-
 .footer .short-link a,
 .footer .help-link a,
 .footer .contact-link a {
@@ -689,6 +699,7 @@
     background: var(--bs-secondary);
     border: 0;
 }
+
 a img.logo-img {
     max-width: 150px; /* Sets the maximum width of the image */
     max-height: 150px; /* Sets the maximum height of the image */
@@ -697,3 +708,213 @@ a img.logo-img {
 }
 
 /*** Footer End ***/
+
+/*** Responsive Adjustments ***/
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .navbar-nav {
+        margin-left: 0;
+    }
+
+    .d-none.d-xl-flex {
+        margin-left: 0;
+        padding-right: 0;
+    }
+
+    .carousel-item h1 {
+        font-size: 28px !important;
+    }
+
+    .carousel-item p {
+        font-size: 14px !important;
+    }
+
+    .btn-lg-square {
+        width: 46px;
+        height: 46px;
+    }
+
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .topbar .top-link {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .topbar .top-link a {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    #note {
+        width: 100%;
+    }
+
+    .services .services-item {
+        margin-bottom: 20px;
+    }
+
+    .project-img::before,
+    .project-img::after {
+        width: 100px;
+        height: 100px;
+    }
+
+
+    .team-carousel .owl-nav {
+        top: -70px;
+    }
+
+    .testimonial-carousel .owl-dots {
+        margin-top: 10px;
+    }
+
+    .contact-detail::before {
+        height: 30%;
+    }
+
+ 
+
+    .footer .hightech-link a {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand img {
+        max-height: 20px;
+    }
+
+    .carousel-item h1 {
+        font-size: 24px !important;
+    }
+
+    .carousel-item p {
+        font-size: 12px !important;
+    }
+
+    .btn-md-square {
+        width: 36px;
+        height: 36px;
+    }
+
+    .back-to-top {
+        width: 30px;
+        height: 30px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .topbar .top-info {
+        font-size: 0.8rem;
+    }
+
+    .services .services-item {
+        padding: 5px 0;
+    }
+
+    .project-img::before,
+    .project-img::after {
+        width: 80px;
+        height: 80px;
+    }
+
+
+
+    .team-carousel .owl-nav {
+        top: -60px;
+    }
+
+    .testimonial-carousel .owl-dots {
+        margin-top: 5px;
+    }
+
+    .contact-detail::before {
+        height: 20%;
+    }
+
+
+}
+
+/*** General Responsive Adjustments ***/
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .d-none.d-xl-flex {
+        flex-direction: column;
+    }
+
+    .services .services-item {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-content {
+        flex-direction: column;
+    }
+
+    .team-carousel .owl-stage {
+        flex-direction: column;
+    }
+
+   
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+}
+
+/*** Images and Media Responsiveness ***/
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+/*** Navigation Menu for Mobile ***/
+@media (max-width: 768px) {
+    .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-collapse {
+        display: none;
+    }
+
+    .navbar-collapse.show {
+        display: block;
+    }
+}
